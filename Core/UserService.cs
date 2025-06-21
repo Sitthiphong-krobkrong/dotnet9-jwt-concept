@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using dotnet9_jwt_concept.Helper;
+using Microsoft.EntityFrameworkCore;
+using Octokit;
+using Microsoft.AspNetCore.Authorization;
 
 namespace dotnet9_jwt_concept.Core
 {
@@ -16,10 +19,13 @@ namespace dotnet9_jwt_concept.Core
     public class UserService : IUserService
     {
         private readonly AppDbContext _db;
-        public UserService(AppDbContext db)
+        private readonly JwtHelper _jwtHelper;
+        public UserService(AppDbContext db, JwtHelper jwtHelper)
         {
             _db = db;
+            _jwtHelper = jwtHelper;
         }
+
         public async Task<IEnumerable<User>> GetAllAsync()
             => await _db.Users.AsNoTracking().ToListAsync();
 
@@ -54,6 +60,8 @@ namespace dotnet9_jwt_concept.Core
             // 2. อัปเดตเฉพาะ field ที่ควรแก้ไข
             dbUser.user_fname = user.user_fname;
             dbUser.user_lname = user.user_lname;
+            dbUser.update_user_date = DateTime.UtcNow;
+            //dbUser.update_user_id = userId;
             await _db.SaveChangesAsync();
             return true;
         }

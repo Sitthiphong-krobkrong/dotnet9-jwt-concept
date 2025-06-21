@@ -48,3 +48,4 @@ D:\About-me\C#\dotnet9-jwt-concept\bin\Debug\net9.0\Microsoft.EntityFrameworkCor
 D:\About-me\C#\dotnet9-jwt-concept\bin\Debug\net9.0\Npgsql.dll
 D:\About-me\C#\dotnet9-jwt-concept\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 D:\About-me\C#\dotnet9-jwt-concept\obj\Debug\net9.0\dotnet9-jwt-concept.sourcelink.json
+D:\About-me\C#\dotnet9-jwt-concept\bin\Debug\net9.0\Postman\dotnet9-jwt-concept.postman_collection.json

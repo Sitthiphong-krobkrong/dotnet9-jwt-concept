@@ -1,4 +1,4 @@
-using dotnet9_jwt_concept.Core;
+﻿using dotnet9_jwt_concept.Core;
 using dotnet9_jwt_concept.Helper;
 using dotnet9_jwt_concept.Models.Core;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -7,6 +7,18 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy
+            .AllowAnyOrigin()    // หรือกำหนด origin เฉพาะก็ได้
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 
 // Add services to the container.
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
@@ -54,9 +66,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
-
+app.UseCors("AllowAll");
 app.UseAuthentication();
-
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
