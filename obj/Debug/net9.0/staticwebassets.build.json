@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "g523pK07riqH1scG2DnJBiy+MPWAPgem5JWih1mu0K4=",
+  "Source": "dotnet9-jwt-concept",
+  "BasePath": "_content/dotnet9-jwt-concept",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
