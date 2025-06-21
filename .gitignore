@@ -1,0 +1,40 @@
+﻿# .NET build results
+bin/
+obj/
+out/
+TestResults/
+.vscode/
+*.user
+*.suo
+
+# ASP.NET specific
+wwwroot/dist/
+wwwroot/node_modules/
+
+# Rider
+.idea/
+
+# Mac
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Logs
+*.log
+
+# Others
+*.db
+*.sqlite
+*.sqlite3
+
+# User-specific files
+*.userosscache
+*.sln.docstates
+
+# VS Code directory
+.vscode/
+
+# Allow Visual Studio folder (.vs) to be included (remove/exclude from ignore)
+.vs/

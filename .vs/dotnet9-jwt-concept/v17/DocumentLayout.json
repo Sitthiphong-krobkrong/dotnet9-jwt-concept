@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\About-me\\C#\\dotnet9-jwt-concept\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\dotnet9-jwt-concept.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:dotnet9-jwt-concept.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,6 +51,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAuwBkAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-06-21T06:47:20.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dotnet9-jwt-concept.http",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\dotnet9-jwt-concept.http",
+              "RelativeDocumentMoniker": "dotnet9-jwt-concept.http",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\dotnet9-jwt-concept.http",
+              "RelativeToolTip": "dotnet9-jwt-concept.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-06-21T06:46:03.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAqwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T06:46:02.441Z",
+              "EditorCaption": ""
             }
           ]
         },
