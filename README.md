@@ -22,18 +22,6 @@
 - `ExceptionHandlingMiddleware` – Middleware สำหรับจัดการ Exception ทั่วทั้งแอป
 
 ---
-
-## 📁 Project Structure
-
-- `Program.cs` – จุดเริ่มต้นของแอป, กำหนด Service และ Middleware
-- `Helper/JwtHelper.cs` – ฟังก์ชันสำหรับสร้างและตรวจสอบ JWT
-- `Models/Core/AppSettings.cs` – คลาสสำหรับ Mapping ค่าจาก `appsettings.json`
-- `Controllers/UserController.cs` – ตัวอย่าง Controller สำหรับ Authentication
-- `Core/UserService.cs` – ตัวอย่าง Service สำหรับจัดการผู้ใช้
-- `Core/DbContext.cs` – ตัวอย่าง Context สำหรับเชื่อมต่อข้อมูล
-- `ExceptionHandlingMiddleware` – Middleware สำหรับจัดการ Exception ทั่วทั้งแอป
-
----
 ## 🧑‍💻 Usage Example
 
 1. **Login**  
