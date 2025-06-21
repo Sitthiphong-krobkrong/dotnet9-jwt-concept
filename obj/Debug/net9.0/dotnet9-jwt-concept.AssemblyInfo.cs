@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dotnet9-jwt-concept")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2b768de13c5de9fc43830749059a68da86b8697")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f3010c25b6bd292e265faa1fe0aa9ebf8baba1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("dotnet9-jwt-concept")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dotnet9-jwt-concept")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
