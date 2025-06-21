@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\About-me\\C#\\dotnet9-jwt-concept\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\core\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:core\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\core\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:core\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +26,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-21T06:56:37.647Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAmwEYAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T08:00:01.347Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -38,6 +83,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Core\\DbContext.cs",
+              "RelativeDocumentMoniker": "Core\\DbContext.cs",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Core\\DbContext.cs",
+              "RelativeToolTip": "Core\\DbContext.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAApwCIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T08:31:01.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Core\\UserService.cs",
+              "RelativeDocumentMoniker": "Core\\UserService.cs",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Core\\UserService.cs",
+              "RelativeToolTip": "Core\\UserService.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAApwBEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T08:30:05.617Z",
+              "EditorCaption": ""
             }
           ]
         },

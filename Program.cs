@@ -1,6 +1,8 @@
+using dotnet9_jwt_concept.Core;
 using dotnet9_jwt_concept.Helper;
 using dotnet9_jwt_concept.Models.Core;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -9,8 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 builder.Services.AddSingleton<JwtHelper>();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Check JWT
 var jwtSettings = builder.Configuration.GetSection("AppSettings:Jwt").Get<JwtSettings>();

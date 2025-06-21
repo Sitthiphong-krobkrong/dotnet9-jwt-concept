@@ -54,5 +54,73 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet9_jwt_concept.Controllers.UserController",
+    "Method": "CreateUser",
+    "RelativePath": "User/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "dotnet9_jwt_concept.Core.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet9_jwt_concept.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "User/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet9_jwt_concept.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "User/update",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "dotnet9_jwt_concept.Core.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet9_jwt_concept.Controllers.UserController",
+    "Method": "getUser",
+    "RelativePath": "User/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet9_jwt_concept.Controllers.UserController",
+    "Method": "verifyMe",
+    "RelativePath": "User/verify-me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

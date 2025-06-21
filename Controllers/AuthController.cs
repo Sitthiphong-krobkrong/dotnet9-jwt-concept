@@ -5,6 +5,7 @@ using dotnet9_jwt_concept.Helper;
 using dotnet9_jwt_concept.Models.Core;
 using System.IdentityModel.Tokens.Jwt;
 using static dotnet9_jwt_concept.Models.AuthModels;
+using dotnet9_jwt_concept.Core;
 
 namespace dotnet9_jwt_concept.Controllers
 {
@@ -13,10 +14,11 @@ namespace dotnet9_jwt_concept.Controllers
     [Route("[controller]")]
     public class AuthController : Controller
     {
-
+        private readonly IUserService _userService;
         private readonly JwtHelper _JwtHelper;
-        public AuthController(JwtHelper JwtHelper)
+        public AuthController(JwtHelper JwtHelper, IUserService userService)
         {
+            _userService = userService;
             _JwtHelper = JwtHelper;
         }
 
@@ -24,12 +26,12 @@ namespace dotnet9_jwt_concept.Controllers
         [HttpGet("health-check")]
         public Task<ActionResult<ApiResponse<object>>> IndexAsync()
         {
-            // สมมติ payload เป็น anonymous object
             var payload = new { welcome = "Welcome to Auth API" };
             return Task.FromResult<ActionResult<ApiResponse<object>>>(
                 Ok(ApiResponseFactory.Ok(payload, "เรียกดูสำเร็จ"))
             );
         }
+
 
         [AllowAnonymous]
         [HttpPost("login")]
@@ -50,12 +52,12 @@ namespace dotnet9_jwt_concept.Controllers
                 );
             }
 
-            // 2) Business check
-            if (param.Username != "admin" || param.Password != "1234")
+            var checkUser = await _userService.CheckUserLoginAsync(param.Username,param.Password);
+            if (checkUser == null)
             {
                 return Unauthorized(
                     ApiResponseFactory.Fail(
-                        errorCode: "InvalidCredentials",
+                        errorCode: "UserNotFound",
                         errorDetail: "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง",
                         message: "ล็อกอินไม่สำเร็จ"
                     )
@@ -63,7 +65,7 @@ namespace dotnet9_jwt_concept.Controllers
             }
 
             // 3) Generate token
-            var token = _JwtHelper.GenerateToken(param.Username, param.Password);
+            var token = _JwtHelper.GenerateToken(checkUser);
             var payload = new { token };
 
             // 4) Return success
@@ -82,5 +84,7 @@ namespace dotnet9_jwt_concept.Controllers
             // โยน Exception ตรงนี้เลย
             throw new Exception("This is a test exception for middleware");
         }
+
+        
     }
 }

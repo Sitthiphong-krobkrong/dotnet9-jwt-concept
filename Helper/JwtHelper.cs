@@ -4,6 +4,9 @@ using dotnet9_jwt_concept.Models.Core;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using dotnet9_jwt_concept.Core;
+using Octokit;
+using User = dotnet9_jwt_concept.Core.User;
 
 namespace dotnet9_jwt_concept.Helper
 {
@@ -15,7 +18,7 @@ namespace dotnet9_jwt_concept.Helper
             _jwt = appSettings.Value.Jwt;
         }
 
-        public string GenerateToken(string userName, string passWord)
+        public string GenerateToken(User payload)
         {
             // 1. สร้าง Security Key และ Credentials
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.SecretKey));
@@ -24,8 +27,11 @@ namespace dotnet9_jwt_concept.Helper
             // 2. กำหนด Claims ที่ต้องการฝังในโทเค็น
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, userName),
-                new Claim("username", userName),
+                new Claim(JwtRegisteredClaimNames.Sub, payload.user_name),
+                new Claim("userId", payload.user_id.ToString()),
+                new Claim("userName", payload.user_name),
+                new Claim("firstName", payload.user_fname),
+                new Claim("lastName", payload.user_lname),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
@@ -71,5 +77,34 @@ namespace dotnet9_jwt_concept.Helper
             var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
             return principal;
         }
+
+        public User? DecodeUserFromToken(HttpContext context)
+        {
+            // 1. ดึง JWT จาก header
+            var authHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+            if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
+                return null;
+            var token = authHeader.Substring("Bearer ".Length).Trim();
+
+            // 2. Validate token (ปลอดภัยสุด)
+            try
+            {
+                var principal = ValidateToken(token);
+                var claims = principal.Claims.ToDictionary(c => c.Type, c => c.Value);
+
+                return new User
+                {
+                    user_id = int.TryParse(claims.GetValueOrDefault("userId"), out var uid) ? uid : 0,
+                    user_name = claims.GetValueOrDefault("userName") ?? "",
+                    user_fname = claims.GetValueOrDefault("firstName") ?? "",
+                    user_lname = claims.GetValueOrDefault("lastName") ?? ""
+                };
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
     }
 }

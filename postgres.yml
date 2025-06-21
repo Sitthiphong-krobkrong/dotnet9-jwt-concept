@@ -1,0 +1,18 @@
+﻿version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: pg16-dev
+    restart: always
+    environment:
+      POSTGRES_DB: dotnet9    # ชื่อ database ที่จะสร้าง
+      POSTGRES_USER: stp      # ชื่อ user
+      POSTGRES_PASSWORD: stp@admin  # รหัสผ่าน user
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data   # เก็บข้อมูลนอก container
+
+volumes:
+  pgdata:
