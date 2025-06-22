@@ -33,7 +33,7 @@ namespace dotnet9_jwt_concept.Controllers
         [HttpGet("verify-me")]
         public async Task<IActionResult> verifyMe()
         {
-            var user = _JwtHelper.DecodeUserFromToken(HttpContext);
+            var user = _JwtHelper.DecodeUserFromToken();
             if (user == null)
             {
                 return Unauthorized(ApiResponseFactory.Fail(
@@ -59,9 +59,16 @@ namespace dotnet9_jwt_concept.Controllers
                 ));
             }
 
-            var createUser = await _userService.AddAsync(param);
+            var createResult = await _userService.AddAsync(param);
+            if (!createResult.Item2)
+            {
+                return BadRequest(ApiResponseFactory.Fail(
+                    message: createResult.Item3,
+                    errorCode: "InvalidToken"
+                ));
+            }
             return Ok(ApiResponseFactory.Ok(
-                   message: "สร้าง user สำเร็จ",
+                   message: createResult.Item3,
                    data: new { }
                )
            );
@@ -73,23 +80,22 @@ namespace dotnet9_jwt_concept.Controllers
             if (param?.user_id == null || param.user_id <= 0)
             {
                 return BadRequest(ApiResponseFactory.Fail(
-                    message: "user_id ไม่ถูกต้อง",
+                    message: "ไม่พบข้อมูล user_id",
                     errorCode: "InvalidUserId"
                 ));
             }
 
-            var success = await _userService.UpdateAsync(param);
-
-            if (!success)
+            var updateResult = await _userService.UpdateAsync(param);
+            if (!updateResult.Item1)
             {
                 return NotFound(ApiResponseFactory.Fail(
-                    message: "ไม่พบข้อมูลผู้ใช้งาน",
-                    errorCode: "NotfoundUserId"
+                    message: updateResult.Item2,
+                    errorCode: "DuplicateUserName"
                 ));
             }
 
             return Ok(ApiResponseFactory.Ok(
-                message: "อัปเดต user สำเร็จ",
+                message: updateResult.Item2,
                 data: new { }
             ));
         }
@@ -97,27 +103,17 @@ namespace dotnet9_jwt_concept.Controllers
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
-            var userInfo = _JwtHelper.DecodeUserFromToken(HttpContext);
-            if (userInfo == null)
-            {
-                return Unauthorized(ApiResponseFactory.Fail(
-                    message: "Token invalid or expired",
-                    errorCode: "InvalidToken"
-                ));
-            }
-
-            int userId = userInfo.user_id;
-            var success = await _userService.DeleteAsync(id, userId);
-            if (!success)
+            var deleteResult = await _userService.DeleteAsync(id);
+            if (!deleteResult.Item1)
             {
                 return NotFound(ApiResponseFactory.Fail(
-                    message: "ไม่พบข้อมูลผู้ใช้งาน",
+                    message: deleteResult.Item2,
                     errorCode: "NotfoundUserId"
                 ));
             }
 
             return Ok(ApiResponseFactory.Ok(
-                message: "ลบ user สำเร็จ",
+                message: deleteResult.Item2,
                 data: new { }
             ));
         }

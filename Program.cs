@@ -21,6 +21,7 @@ builder.Services.AddCors(options =>
 
 
 // Add services to the container.
+builder.Services.AddHttpContextAccessor();
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 builder.Services.AddSingleton<JwtHelper>();
 builder.Services.AddDbContext<AppDbContext>(options =>

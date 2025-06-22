@@ -13,9 +13,11 @@ namespace dotnet9_jwt_concept.Helper
     public class JwtHelper
     {
         private readonly JwtSettings _jwt;
-        public JwtHelper(IOptions<AppSettings> appSettings)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public JwtHelper(IOptions<AppSettings> appSettings, IHttpContextAccessor httpContextAccessor)
         {
             _jwt = appSettings.Value.Jwt;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public string GenerateToken(User payload)
@@ -78,8 +80,10 @@ namespace dotnet9_jwt_concept.Helper
             return principal;
         }
 
-        public User? DecodeUserFromToken(HttpContext context)
+        public User? DecodeUserFromToken()
         {
+            var context = _httpContextAccessor.HttpContext;
+            
             // 1. ดึง JWT จาก header
             var authHeader = context.Request.Headers["Authorization"].FirstOrDefault();
             if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
