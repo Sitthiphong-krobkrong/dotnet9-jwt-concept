@@ -9,6 +9,7 @@ services:
       POSTGRES_DB: dotnet9    # ชื่อ database ที่จะสร้าง
       POSTGRES_USER: stp      # ชื่อ user
       POSTGRES_PASSWORD: stp@admin  # รหัสผ่าน user
+      TZ: Asia/Bangkok              # ตั้งค่า timezone เป็นไทย
     ports:
       - "5432:5432"
     volumes:

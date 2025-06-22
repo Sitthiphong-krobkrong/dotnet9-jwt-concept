@@ -29,7 +29,7 @@
     "Parameters": [
       {
         "Name": "param",
-        "Type": "dotnet9_jwt_concept.Models.AuthModels\u002BAuth",
+        "Type": "dotnet9_jwt_concept.Models.AuthModels\u002BAuthRequest",
         "IsRequired": true
       }
     ],

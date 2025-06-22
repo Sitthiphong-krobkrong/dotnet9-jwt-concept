@@ -7,6 +7,9 @@ using System.Text;
 using dotnet9_jwt_concept.Core;
 using Octokit;
 using User = dotnet9_jwt_concept.Core.User;
+using System.Security.Cryptography;
+using Microsoft.EntityFrameworkCore;
+using static dotnet9_jwt_concept.Models.AuthModels;
 
 namespace dotnet9_jwt_concept.Helper
 {
@@ -20,7 +23,25 @@ namespace dotnet9_jwt_concept.Helper
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public string GenerateToken(User payload)
+        public async Task<AuthResult> GenerateTokenPair(User user)
+        {
+            var accessToken = GenerateAccessToken(user); // JWT สั้นๆ 15 นาที
+            var refreshToken = GenerateRefreshToken();
+
+            //user.RefreshToken = refreshToken;
+            //user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+
+            //_context.Users.Update(user);
+            //await _context.SaveChangesAsync();
+
+            return new AuthResult
+            {
+                AccessToken = accessToken,
+                RefreshToken = refreshToken
+            };
+        }
+
+        public string GenerateAccessToken(User payload)
         {
             // 1. สร้าง Security Key และ Credentials
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.SecretKey));
@@ -51,6 +72,14 @@ namespace dotnet9_jwt_concept.Helper
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
+        }
+
+        public string GenerateRefreshToken()
+        {
+            var randomNumber = new byte[64]; // 512-bit
+            using var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(randomNumber);
+            return Convert.ToBase64String(randomNumber);
         }
 
 

@@ -3,18 +3,20 @@ using Microsoft.EntityFrameworkCore;
 using Octokit;
 using Microsoft.AspNetCore.Authorization;
 using dotnet9_jwt_concept.Models.Core;
+using System.Runtime.InteropServices;
 
 namespace dotnet9_jwt_concept.Core
 {
+
     public interface IUserService
     {
-        Task<IEnumerable<User>> GetAllAsync();
-        Task<User?> GetByIdAsync(int id);
+        Task<IEnumerable<User>> ReadAllAsync();
+        Task<User?> ReadByIdAsync(int id);
         Task<(User,bool,string)> AddAsync(User user);
         Task<(bool,string)> UpdateAsync(User user);
         Task<(bool, string)> DeleteAsync(int id);
-        Task<User?> GetByUserNameAsync(string userName);
-        Task<User?> CheckUserLoginAsync(string userName, string passWord);
+        Task<User?> ReadByUserNameAsync(string userName);
+        Task<User?> ReadByUserPassAsync(string userName, string passWord);
     }
 
     public class UserService : IUserService
@@ -26,62 +28,83 @@ namespace dotnet9_jwt_concept.Core
             _db = db;
             _jwtHelper = jwtHelper;
         }
+        private async Task SaveChangeAsync()
+        {
+            try
+            {
+                await _db.SaveChangesAsync();
+            }
+            catch (DbUpdateException ex)
+            {
+                Console.WriteLine(ex.InnerException?.Message);
+                throw;
+            }
 
+        }
 
-        public async Task<IEnumerable<User>> GetAllAsync()
-            => await _db.Users.AsNoTracking().ToListAsync();
-
-        public async Task<User?> GetByIdAsync(int id)
-            => await _db.Users.FindAsync(id);
-
+        #region CREATE
+        //เพิ่มข้อมูล CREATE
         public async Task<(User,bool,string)> AddAsync(User user)
         {
             var userProfile = _jwtHelper.DecodeUserFromToken();
             if (userProfile == null)
             {
-                return (null, false, "Token invalid or expired");
+                return (new User{ }, false, "Token invalid or expired");
             }
 
             user.record_status = "A";
             user.create_user_date = DateTime.UtcNow;
             user.create_user_id = userProfile.user_id;
             _db.Users.Add(user);
-            await _db.SaveChangesAsync();
+            await SaveChangeAsync();
             return (user,true,"เพิ่มข้อมูลสำเร็จ");
         }
+        #endregion
 
-        public async Task<(bool,string)> DeleteAsync(int id)
+        #region READ
+
+        //เรียกดูข้อมูล user ทั้งหมด
+        public async Task<IEnumerable<User>> ReadAllAsync()
         {
-            var user = await _db.Users.FindAsync(id);
-            if (user == null) return (false,"ไม่พบข้อมูลผู้ใช้งาน");
-
-            var userProfile = _jwtHelper.DecodeUserFromToken();
-            if (userProfile == null)
-            {
-                return (false, "Token invalid or expired");
-            }
-
-            user.record_status = "I";
-            user.update_user_date = DateTime.UtcNow;
-            user.update_user_id = userProfile.user_id;
-            await _db.SaveChangesAsync();
-            return (true,"ลบข้อมูลสำเร็จ");
+            return await _db.Users.AsNoTracking().ToListAsync();
         }
 
-        public async Task<(bool,string)> UpdateAsync(User user)
+        //เรียกดูข้อมูล user by userId
+        public async Task<User?> ReadByIdAsync(int id)
         {
-            // 1. เช็คว่ามี user นี้จริงไหม
+            return await _db.Users.FindAsync(id);
+        }
+
+        //เรียกดูข้อมูล by userName READ
+        public async Task<User?>ReadByUserNameAsync(string user_name)
+        {
+            string tempUserName = user_name?.Trim()?.ToLower();
+            return await _db.Users.FirstOrDefaultAsync(u => u.user_name == tempUserName);
+        }
+
+        //เรียกดูข้อมูล by userName READ
+        public async Task<User?> ReadByUserPassAsync(string user_name, string user_pass)
+        {
+            return await _db.Users.FirstOrDefaultAsync(u => u.user_name == user_name && u.user_pass == user_pass);
+        }
+
+        #endregion
+
+        #region UPDATE
+        //แก้ไขข้อมูล UPDATE
+        public async Task<(bool, string)> UpdateAsync(User user)
+        {
             var dbUser = await _db.Users.FindAsync(user.user_id);
-            if (dbUser == null) 
+            if (dbUser == null)
             {
                 return (false, "ไม่พบผู้ใช้งาน");
             }
 
-            var checkDuplicateUserName = await GetByUserNameAsync(user.user_name);
-            if (checkDuplicateUserName != null 
+            var checkDuplicateUserName = await ReadByUserNameAsync(user.user_name);
+            if (checkDuplicateUserName != null
                 && checkDuplicateUserName.user_id != user.user_id)
-            { 
-                return (false, "user_name ซ้ำ กรุณาใช้ user_name อื่น"); 
+            {
+                return (false, "user_name ซ้ำ กรุณาใช้ user_name อื่น");
             }
 
             var userProfile = _jwtHelper.DecodeUserFromToken();
@@ -97,20 +120,32 @@ namespace dotnet9_jwt_concept.Core
             dbUser.user_lname = user.user_lname;
             dbUser.update_user_date = DateTime.UtcNow;
             dbUser.update_user_id = userProfile.user_id;
-            await _db.SaveChangesAsync();
-            return (true, "อัพเดทข้อมูลสำเร็จ"); 
+            await SaveChangeAsync();
+            return (true, "อัพเดทข้อมูลสำเร็จ");
         }
+        #endregion
 
-        public async Task<User?> GetByUserNameAsync(string user_name)
+        #region DELETE
+        //ลบข้อมูล DELETE
+        public async Task<(bool,string)> DeleteAsync(int id)
         {
-            string tempUserName = user_name?.Trim()?.ToLower();
-            return await _db.Users.FirstOrDefaultAsync(u => u.user_name == tempUserName);
-        }
+            var user = await _db.Users.FindAsync(id);
+            if (user == null) return (false,"ไม่พบข้อมูลผู้ใช้งาน");
 
-        public async Task<User?> CheckUserLoginAsync(string user_name, string user_pass)
-        {
-            return await _db.Users.FirstOrDefaultAsync(u => u.user_name == user_name && u.user_pass == user_pass);
+            var userProfile = _jwtHelper.DecodeUserFromToken();
+            if (userProfile == null)
+            {
+                return (false, "Token invalid or expired");
+            }
+
+            user.record_status = "I";
+            user.update_user_date = DateTime.UtcNow;
+            user.update_user_id = userProfile.user_id;
+            await SaveChangeAsync();
+            return (true,"ลบข้อมูลสำเร็จ");
         }
+        #endregion
+
     }
 }
 

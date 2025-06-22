@@ -35,7 +35,7 @@ namespace dotnet9_jwt_concept.Controllers
 
         [AllowAnonymous]
         [HttpPost("login")]
-        public async Task<ActionResult<ApiResponse<object>>> AuthAsync([FromBody] Auth param)
+        public async Task<ActionResult<ApiResponse<object>>> AuthAsync([FromBody] AuthRequest param)
         {
             // 1) Validation
             if (!ModelState.IsValid)
@@ -52,7 +52,7 @@ namespace dotnet9_jwt_concept.Controllers
                 );
             }
 
-            var checkUser = await _userService.CheckUserLoginAsync(param.Username,param.Password);
+            var checkUser = await _userService.ReadByUserPassAsync(param.Username,param.Password);
             if (checkUser == null)
             {
                 return Unauthorized(
@@ -65,8 +65,12 @@ namespace dotnet9_jwt_concept.Controllers
             }
 
             // 3) Generate token
-            var token = _JwtHelper.GenerateToken(checkUser);
-            var payload = new { token };
+            var genTokenResult = await _JwtHelper.GenerateTokenPair(checkUser);
+            var payload = new 
+            { 
+                token = genTokenResult.AccessToken,
+                refreshToken = genTokenResult.RefreshToken,
+            };
 
             // 4) Return success
             return Ok(

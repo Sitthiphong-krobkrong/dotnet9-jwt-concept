@@ -22,7 +22,7 @@ namespace dotnet9_jwt_concept.Controllers
         [HttpGet("users")]
         public async Task<IActionResult> getUser()
         {
-            var users = await _userService.GetAllAsync();
+            var users = await _userService.ReadAllAsync();
             return Ok(ApiResponseFactory.Ok(
                    message: "get user success",
                    data: users
@@ -50,7 +50,7 @@ namespace dotnet9_jwt_concept.Controllers
         [HttpPost("create")]
         public async Task<IActionResult> CreateUser([FromBody] User param)
         {
-            var vaildUser = await _userService.GetByUserNameAsync(param.user_name);
+            var vaildUser = await _userService.ReadByUserNameAsync(param.user_name);
             if (vaildUser != null)
             {
                 return Conflict(ApiResponseFactory.Fail(
