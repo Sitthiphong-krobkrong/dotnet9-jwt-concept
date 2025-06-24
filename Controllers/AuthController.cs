@@ -23,6 +23,7 @@ namespace dotnet9_jwt_concept.Controllers
         }
 
         // GET: /auth/health-check
+        [AllowAnonymous]
         [HttpGet("health-check")]
         public Task<ActionResult<ApiResponse<object>>> IndexAsync()
         {
