@@ -4,6 +4,7 @@ using Octokit;
 using Microsoft.AspNetCore.Authorization;
 using dotnet9_jwt_concept.Models.Core;
 using System.Runtime.InteropServices;
+using Microsoft.AspNetCore.Identity;
 
 namespace dotnet9_jwt_concept.Core
 {
@@ -23,10 +24,13 @@ namespace dotnet9_jwt_concept.Core
     {
         private readonly AppDbContext _db;
         private readonly JwtHelper _jwtHelper;
-        public UserService(AppDbContext db, JwtHelper jwtHelper)
+        private readonly HashHelper _hashHelper;
+
+        public UserService(AppDbContext db, JwtHelper jwtHelper, HashHelper hashHelper)
         {
             _db = db;
             _jwtHelper = jwtHelper;
+            _hashHelper = hashHelper;
         }
         private async Task SaveChangeAsync()
         {
@@ -55,6 +59,7 @@ namespace dotnet9_jwt_concept.Core
             user.record_status = "A";
             user.create_user_date = DateTime.UtcNow;
             user.create_user_id = userProfile.user_id;
+            user.user_pass = _hashHelper.Hash(user.user_pass);
             _db.Users.Add(user);
             await SaveChangeAsync();
             return (user,true,"เพิ่มข้อมูลสำเร็จ");
@@ -85,7 +90,19 @@ namespace dotnet9_jwt_concept.Core
         //เรียกดูข้อมูล by userName READ
         public async Task<User?> ReadByUserPassAsync(string user_name, string user_pass)
         {
-            return await _db.Users.FirstOrDefaultAsync(u => u.user_name == user_name && u.user_pass == user_pass);
+            var user = await _db.Users.FirstOrDefaultAsync(u => u.user_name == user_name);
+            if (user == null) return null;
+
+            bool isValid = _hashHelper.Verify(user_pass, user.user_pass);
+            return isValid ? user : null;
+
+            //var user = await _db.Users.FirstOrDefaultAsync(u => u.user_name == user_name && u.user_pass == user_pass);
+            //if (user == null)
+            //{
+            //    return null;
+            //}
+
+            //return user;
         }
 
         #endregion
@@ -115,7 +132,7 @@ namespace dotnet9_jwt_concept.Core
 
             // 2. อัปเดตเฉพาะ field ที่ควรแก้ไข
             dbUser.user_name = user.user_name;
-            dbUser.user_pass = user.user_pass;
+            dbUser.user_pass = _hashHelper.Hash(user.user_pass);
             dbUser.user_fname = user.user_fname;
             dbUser.user_lname = user.user_lname;
             dbUser.update_user_date = DateTime.UtcNow;

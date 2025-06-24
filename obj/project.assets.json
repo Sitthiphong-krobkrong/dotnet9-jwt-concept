@@ -1138,25 +1138,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\STP\\.nuget\\packages\\": {},
+    "C:\\Users\\User\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\About-me\\C#\\dotnet9-jwt-concept\\dotnet9-jwt-concept.csproj",
+      "projectUniqueName": "C:\\MyLearning\\.NET\\dotnet9-jwt-concept\\dotnet9-jwt-concept.csproj",
       "projectName": "dotnet9-jwt-concept",
-      "projectPath": "D:\\About-me\\C#\\dotnet9-jwt-concept\\dotnet9-jwt-concept.csproj",
-      "packagesPath": "C:\\Users\\STP\\.nuget\\packages\\",
-      "outputPath": "D:\\About-me\\C#\\dotnet9-jwt-concept\\obj\\",
+      "projectPath": "C:\\MyLearning\\.NET\\dotnet9-jwt-concept\\dotnet9-jwt-concept.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\MyLearning\\.NET\\dotnet9-jwt-concept\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\STP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
