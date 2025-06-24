@@ -1,28 +1,18 @@
 [
   {
     "ContainingType": "dotnet9_jwt_concept.Controllers.AuthController",
-    "Method": "IndexAsync",
-    "RelativePath": "Auth/health-check",
+    "Method": "defaultAsync",
+    "RelativePath": "api/Auth/health-check",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "dotnet9_jwt_concept.Models.Core.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "dotnet9_jwt_concept.Controllers.AuthController",
     "Method": "AuthAsync",
-    "RelativePath": "Auth/login",
+    "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -48,7 +38,17 @@
   {
     "ContainingType": "dotnet9_jwt_concept.Controllers.AuthController",
     "Method": "TriggerError",
-    "RelativePath": "Auth/trigger-error",
+    "RelativePath": "api/Auth/trigger-error",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet9_jwt_concept.Controllers.DefaultController",
+    "Method": "defaultAsync",
+    "RelativePath": "api/Default/health-check",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -58,7 +58,7 @@
   {
     "ContainingType": "dotnet9_jwt_concept.Controllers.UserController",
     "Method": "CreateUser",
-    "RelativePath": "User/create",
+    "RelativePath": "api/User/create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -74,7 +74,7 @@
   {
     "ContainingType": "dotnet9_jwt_concept.Controllers.UserController",
     "Method": "DeleteUser",
-    "RelativePath": "User/delete/{id}",
+    "RelativePath": "api/User/delete/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -89,8 +89,18 @@
   },
   {
     "ContainingType": "dotnet9_jwt_concept.Controllers.UserController",
+    "Method": "defaultAsync",
+    "RelativePath": "api/User/health-check",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet9_jwt_concept.Controllers.UserController",
     "Method": "UpdateUser",
-    "RelativePath": "User/update",
+    "RelativePath": "api/User/update",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -106,7 +116,7 @@
   {
     "ContainingType": "dotnet9_jwt_concept.Controllers.UserController",
     "Method": "getUser",
-    "RelativePath": "User/users",
+    "RelativePath": "api/User/users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -116,7 +126,7 @@
   {
     "ContainingType": "dotnet9_jwt_concept.Controllers.UserController",
     "Method": "verifyMe",
-    "RelativePath": "User/verify-me",
+    "RelativePath": "api/User/verify-me",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

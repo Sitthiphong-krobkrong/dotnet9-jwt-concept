@@ -3,20 +3,40 @@
   "WorkspaceRootPath": "D:\\About-me\\C#\\dotnet9-jwt-concept\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\postgres.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:postgres.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\dotnet9-jwt.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:dotnet9-jwt.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|D:\\About-me\\C#\\dotnet9-jwt-concept\\Dockerfile.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:Dockerfile.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\core\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:core\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\controllers\\defaultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:controllers\\defaultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|d:\\about-me\\c#\\dotnet9-jwt-concept\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BD08E1-4272-4806-ABD1-7152BFFD13C2}|dotnet9-jwt-concept.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,60 +46,128 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
+              "Title": "DefaultController.cs",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Controllers\\DefaultController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DefaultController.cs",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Controllers\\DefaultController.cs",
+              "RelativeToolTip": "Controllers\\DefaultController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T07:08:12.8Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAuwBQAAACZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-24T01:35:54.335Z",
+              "WhenOpened": "2025-06-24T07:08:09.283Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Core\\UserService.cs",
-              "RelativeDocumentMoniker": "Core\\UserService.cs",
-              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Core\\UserService.cs",
-              "RelativeToolTip": "Core\\UserService.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAADgv34AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T09:38:30.053Z",
+              "WhenOpened": "2025-06-24T07:52:35.471Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Dockerfile",
-              "RelativeDocumentMoniker": "Dockerfile",
-              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Dockerfile",
-              "RelativeToolTip": "Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-24T02:08:42.174Z",
+              "DocumentIndex": 8,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T07:51:53.906Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dockerfile.txt",
-              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Dockerfile.txt",
-              "RelativeDocumentMoniker": "Dockerfile.txt",
-              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Dockerfile.txt",
-              "RelativeToolTip": "Dockerfile.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-06-24T02:08:35.661Z",
+              "Title": "dotnet9-jwt.yml",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\dotnet9-jwt.yml",
+              "RelativeDocumentMoniker": "dotnet9-jwt.yml",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\dotnet9-jwt.yml",
+              "RelativeToolTip": "dotnet9-jwt.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-06-24T08:22:42.225Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-24T08:24:28.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T08:24:21.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "postgres.yml",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\postgres.yml",
+              "RelativeDocumentMoniker": "postgres.yml",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\postgres.yml",
+              "RelativeToolTip": "postgres.yml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAcwBcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-06-24T08:13:55.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "D:\\About-me\\C#\\dotnet9-jwt-concept\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-24T08:10:45.01Z",
               "EditorCaption": ""
             },
             {
@@ -105,10 +193,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",

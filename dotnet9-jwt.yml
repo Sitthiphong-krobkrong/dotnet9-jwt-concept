@@ -1,0 +1,13 @@
+﻿version: '3.8'
+
+services:
+ app:
+    image: dotnet9-jwt       # ใช้ image ชื่อ dotnet9-jwt แทน build
+    container_name: dotnet9-jwt
+    restart: always
+    ports:
+      - "5000:80"             # 5000 = host port, 80 = container port
+    volumes:
+      - /home/ubuntu/api/dotnet9:/app   # แม็ปโค้ดจาก host เข้า container
+    environment:
+      - ASPNETCORE_URLS=http://+:80     # ← add this

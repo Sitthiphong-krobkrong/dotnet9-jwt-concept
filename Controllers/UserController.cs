@@ -8,7 +8,7 @@ namespace dotnet9_jwt_concept.Controllers
 {
     [ApiController]
     [Authorize]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class UserController : Controller
     {
         private readonly IUserService _userService;
@@ -18,6 +18,20 @@ namespace dotnet9_jwt_concept.Controllers
             _userService = userService;
             _JwtHelper = jwtHelper;
         }
+
+        // GET: /api/user/health-check
+        [HttpGet("health-check")]
+        public async Task<ActionResult<object>> defaultAsync()
+        {
+            var payload = new
+            {
+                timeStamp = DateTime.UtcNow,
+                statusCode = 200,
+                message = "Api is running"
+            };
+            return Ok(payload);
+        }
+
 
         [HttpGet("users")]
         public async Task<IActionResult> getUser()

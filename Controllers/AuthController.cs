@@ -11,7 +11,7 @@ namespace dotnet9_jwt_concept.Controllers
 {
     [ApiController]
     [Authorize]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AuthController : Controller
     {
         private readonly IUserService _userService;
@@ -25,12 +25,15 @@ namespace dotnet9_jwt_concept.Controllers
         // GET: /auth/health-check
         [AllowAnonymous]
         [HttpGet("health-check")]
-        public Task<ActionResult<ApiResponse<object>>> IndexAsync()
+        public async Task<ActionResult<object>> defaultAsync()
         {
-            var payload = new { welcome = "Welcome to Auth API" };
-            return Task.FromResult<ActionResult<ApiResponse<object>>>(
-                Ok(ApiResponseFactory.Ok(payload, "เรียกดูสำเร็จ"))
-            );
+            var payload = new
+            {
+                timeStamp = DateTime.UtcNow,
+                statusCode = 200,
+                message = "Api is running"
+            };
+            return Ok(payload);
         }
 
 

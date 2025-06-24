@@ -35,7 +35,6 @@ D:\About-me\C#\dotnet9-jwt-concept\obj\Debug\net9.0\staticwebassets\msbuild.buil
 D:\About-me\C#\dotnet9-jwt-concept\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.dotnet9-jwt-concept.props
 D:\About-me\C#\dotnet9-jwt-concept\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.dotnet9-jwt-concept.props
 D:\About-me\C#\dotnet9-jwt-concept\obj\Debug\net9.0\staticwebassets.pack.json
-D:\About-me\C#\dotnet9-jwt-concept\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 D:\About-me\C#\dotnet9-jwt-concept\obj\Debug\net9.0\dotnet9-.B548AA6B.Up2Date
 D:\About-me\C#\dotnet9-jwt-concept\obj\Debug\net9.0\dotnet9-jwt-concept.dll
 D:\About-me\C#\dotnet9-jwt-concept\obj\Debug\net9.0\refint\dotnet9-jwt-concept.dll
@@ -49,3 +48,4 @@ D:\About-me\C#\dotnet9-jwt-concept\bin\Debug\net9.0\Npgsql.dll
 D:\About-me\C#\dotnet9-jwt-concept\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 D:\About-me\C#\dotnet9-jwt-concept\obj\Debug\net9.0\dotnet9-jwt-concept.sourcelink.json
 D:\About-me\C#\dotnet9-jwt-concept\bin\Debug\net9.0\Postman\dotnet9-jwt-concept.postman_collection.json
+D:\About-me\C#\dotnet9-jwt-concept\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
