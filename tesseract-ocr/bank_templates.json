@@ -1,0 +1,46 @@
+[
+  {
+    "Name": "SCB",
+    "MinHits": 1,
+    "Detect": [ "SCB", "โอนเงินสำเร็จ" ],
+    "Fields": {
+      "Status": {
+        "Type": "fixed",
+        "Value": "โอนเงินสำเร็จ"
+      },
+      "Reference": {
+        "Type": "regex",
+        "Pattern": "รหัสอ้างอิง\\s*([A-Za-z0-9%ก-๙]+)"
+      },
+      "DateTime": {
+        "Type": "regex",
+        "Pattern": "(\\d{1,2}ก\\.ค\\.2568[-–]\\d{4})"
+      },
+      "FromName": {
+        "Type": "regex",
+        "Pattern": "จาก(.+)"
+      },
+      "ToName": {
+        "Type": "regex",
+        "Pattern": "ไปยัง(.+)"
+      },
+      "Amount": {
+        "Type": "regex",
+        "Pattern": "จํานวนเงิน\\s*([\\d,.]+)"
+      }
+    }
+  },
+  {
+  "Name": "KBank",
+  "MinHits": 1,
+  "Detect": ["KBank", "โอนเงินสำเร็จ"],
+  "Fields": {
+    "Status":        { "Type": "fixed",  "Value": "โอนเงินสำเร็จ" },
+    "Reference":     { "Type": "regex",  "Pattern": "เลขที่อ้างอิง[^\\n]*?:\\s*([A-Za-z0-9]+)" },
+    "DateTime":      { "Type": "regex",  "Pattern": "(\\d{1,2} [ก-ฮ]{1,3}\\. \\d{2,4}[^\\d]*\\d{2}:\\d{2})" },
+    "FromName":      { "Type": "regex",  "Pattern": "จาก[^\\n]*?\\n[^\\n]*?([\\p{L} ]{2,})" },
+    "ToName":        { "Type": "regex",  "Pattern": "ไปยัง[^\\n]*?\\n[^\\n]*?([\\p{L} ]{2,})" },
+    "Amount":        { "Type": "regex",  "Pattern": "จำนวนเงิน[^\\d]*([\\d,]+\\.\\d{2})" }
+    }
+  }
+]

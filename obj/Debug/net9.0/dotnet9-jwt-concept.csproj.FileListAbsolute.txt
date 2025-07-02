@@ -100,3 +100,9 @@ C:\MyLearning\.NET\dotnet9-jwt-concept\obj\Debug\net9.0\refint\dotnet9-jwt-conce
 C:\MyLearning\.NET\dotnet9-jwt-concept\obj\Debug\net9.0\dotnet9-jwt-concept.pdb
 C:\MyLearning\.NET\dotnet9-jwt-concept\obj\Debug\net9.0\dotnet9-jwt-concept.genruntimeconfig.cache
 C:\MyLearning\.NET\dotnet9-jwt-concept\obj\Debug\net9.0\ref\dotnet9-jwt-concept.dll
+C:\MyLearning\.NET\dotnet9-jwt-concept\bin\Debug\net9.0\x86\leptonica-1.80.0.dll
+C:\MyLearning\.NET\dotnet9-jwt-concept\bin\Debug\net9.0\x86\tesseract41.dll
+C:\MyLearning\.NET\dotnet9-jwt-concept\bin\Debug\net9.0\x64\leptonica-1.80.0.dll
+C:\MyLearning\.NET\dotnet9-jwt-concept\bin\Debug\net9.0\x64\tesseract41.dll
+C:\MyLearning\.NET\dotnet9-jwt-concept\bin\Debug\net9.0\Tesseract.dll
+C:\MyLearning\.NET\dotnet9-jwt-concept\bin\Debug\net9.0\tesseract-ocr\bank_templates.json
